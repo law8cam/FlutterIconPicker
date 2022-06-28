@@ -5,6 +5,9 @@
 
 library flutter_iconpicker;
 
+import 'package:flutter_iconpicker/IconPicker/Packs/FontAwesome.dart' as FontAwesome;
+import 'package:flutter_iconpicker/IconPicker/Packs/Material.dart' as Material;
+
 export 'Models/IconPack.dart';
 export 'Serialization/iconDataSerialization.dart';
 
@@ -15,6 +18,13 @@ import 'IconPicker/searchBar.dart';
 import 'Models/IconPack.dart';
 
 class FlutterIconPicker {
+  static Map<String, IconData> getIconMap() {
+    var map1 = Material.icons;
+    var map2 = FontAwesome.fontAwesomeIcons;
+    map1.addAll(map2);
+    return map1;
+  }
+
   static Future<IconData?> showIconPicker(
     BuildContext context, {
 
@@ -130,19 +140,14 @@ class FlutterIconPicker {
     if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
     if (constraints == null) {
       if (adaptiveDialog) {
-        constraints =
-            const BoxConstraints(maxHeight: 500, minWidth: 450, maxWidth: 720);
+        constraints = const BoxConstraints(maxHeight: 500, minWidth: 450, maxWidth: 720);
       } else {
-        constraints =
-            const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
+        constraints = const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
       }
     }
 
-    if (iconPickerShape == null)
-      iconPickerShape =
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));
-    if (backgroundColor == null)
-      backgroundColor = Theme.of(context).dialogBackgroundColor;
+    if (iconPickerShape == null) iconPickerShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));
+    if (backgroundColor == null) backgroundColor = Theme.of(context).dialogBackgroundColor;
 
     IconData? iconPicked;
 
