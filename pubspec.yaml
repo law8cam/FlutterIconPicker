@@ -14,9 +14,15 @@ dependencies:
     sdk: flutter
   font_awesome_flutter: ^10.1.0
   provider: ^6.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dependency_overrides:
+  font_awesome_flutter:
+    path: C:\Users\lawre\StudioProjects\font_awesome_flutter_private
+
 flutter:
   uses-material-design: true
   fonts:

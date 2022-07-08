@@ -35,7 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
       showSearchBar: showSearch,
       iconPickerShape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackModes: [IconPack.cupertino, IconPack.lineAwesomeIcons],
+      // iconPackModes: [IconPack.cupertino, IconPack.lineAwesomeIcons],
+      iconPackModes: [IconPack.fontAwesomeIcons],
     );
 
     if (icon != null) {
