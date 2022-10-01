@@ -43,16 +43,16 @@ Map<String, dynamic>? serializeIcon(IconData icon, {IconPack? iconPack}) {
         'pack': "lineAwesomeIcons",
         'key': _getIconKey(LineAwesome.lineAwesomeIcons, icon),
       };
-    case IconPack.custom:
-      return {
-        'pack': "custom",
-        'iconData': {
-          'codePoint': icon.codePoint,
-          'fontFamily': icon.fontFamily,
-          'fontPackage': icon.fontPackage,
-          'matchTextDirection': icon.matchTextDirection,
-        }
-      };
+    // case IconPack.custom:
+    //   return {
+    //     'pack': "custom",
+    //     'iconData': {
+    //       'codePoint': icon.codePoint,
+    //       'fontFamily': icon.fontFamily,
+    //       'fontPackage': icon.fontPackage,
+    //       'matchTextDirection': icon.matchTextDirection,
+    //     }
+    //   };
     default:
       return null;
   }
