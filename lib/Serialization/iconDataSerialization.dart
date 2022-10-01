@@ -59,6 +59,9 @@ Map<String, dynamic>? serializeIcon(IconData icon, {IconPack? iconPack}) {
 }
 
 IconData? deserializeIcon(Map<String, dynamic> iconMap) {
+
+  // LAC Customer removed, trying to allow Tree Shake
+
   try {
     final pack = iconMap['pack'];
     final iconKey = iconMap['key'];
@@ -71,14 +74,14 @@ IconData? deserializeIcon(Map<String, dynamic> iconMap) {
         return FontAwesome.fontAwesomeIcons[iconKey];
       case "lineAwesomeIcons":
         return LineAwesome.lineAwesomeIcons[iconKey];
-      case "custom":
-        final iconData = iconMap['iconData'];
-        return IconData(
-          iconData['codePoint'],
-          fontFamily: iconData['fontFamily'],
-          fontPackage: iconData['fontPackage'],
-          matchTextDirection: iconData['matchTextDirection'],
-        );
+      // case "custom":
+      //   final iconData = iconMap['iconData'];
+      //   return IconData(
+      //     iconData['codePoint'],
+      //     fontFamily: iconData['fontFamily'],
+      //     fontPackage: iconData['fontPackage'],
+      //     matchTextDirection: iconData['matchTextDirection'],
+      //   );
       default:
         return null;
     }

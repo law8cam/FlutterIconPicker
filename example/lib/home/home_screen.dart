@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       iconPickerShape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       // iconPackModes: [IconPack.cupertino, IconPack.lineAwesomeIcons],
-      iconPackModes: [IconPack.fontAwesomeIcons],
+      iconPackModes: [IconPack.material, IconPack.fontAwesomeIcons],
     );
 
     if (icon != null) {
